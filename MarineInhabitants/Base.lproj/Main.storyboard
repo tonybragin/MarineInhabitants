@@ -24,6 +24,9 @@
                                 <state key="normal" title="Рестарт">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="restartButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JXE-Uo-UZP"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ZrQ-dI-yEY" customClass="GameTableStackView" customModule="MarineInhabitants" customModuleProvider="target">
                                 <rect key="frame" x="8" y="60" width="398" height="732"/>

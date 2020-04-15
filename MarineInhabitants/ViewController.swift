@@ -23,8 +23,11 @@ class ViewController: UIViewController {
         gameTableVerticalStack.initGameTable(width: gameTableWidth, height: gameTableHeight)
     }
 
+    @IBAction func restartButtonTouched(_ sender: UIButton) {
+        gameTableVerticalStack.initGameTable(width: gameTableWidth, height: gameTableHeight)
+    }
     @objc func gameTableVerticalStackTouched() {
-        
+        gameTableVerticalStack.performMove()
     }
 }
 

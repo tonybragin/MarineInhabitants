@@ -8,11 +8,18 @@
 
 import UIKit
 
-class GameCellLabel: UILabel {
-
-    init(filling: String?) {
+class GameCellLabel: UILabel, GameCell {
+    
+    var organism: Organism? {
+        didSet {
+            DispatchQueue.main.async { [weak self] in
+                self?.text = self?.organism?.name
+            }
+        }
+    }
+    
+    init() {
         super.init(frame: .zero)
-        text = filling
         textAlignment = .center
         layer.borderColor = UIColor.black.cgColor
         layer.borderWidth = 1

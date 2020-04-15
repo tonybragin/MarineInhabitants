@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EAAA5AD7244713E70036809C /* GameCellLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA5AD6244713E70036809C /* GameCellLabel.swift */; };
 		EAAA5AD9244715250036809C /* GameTableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA5AD8244715240036809C /* GameTableStackView.swift */; };
+		EAE0E242244723ED007B836F /* Organisms.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0E241244723ED007B836F /* Organisms.swift */; };
 		EAEBF2EB2446FD8B00467B20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEBF2EA2446FD8B00467B20 /* AppDelegate.swift */; };
 		EAEBF2EF2446FD8B00467B20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEBF2EE2446FD8B00467B20 /* ViewController.swift */; };
 		EAEBF2F22446FD8B00467B20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAEBF2F02446FD8B00467B20 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		EAAA5AD6244713E70036809C /* GameCellLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCellLabel.swift; sourceTree = "<group>"; };
 		EAAA5AD8244715240036809C /* GameTableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableStackView.swift; sourceTree = "<group>"; };
+		EAE0E241244723ED007B836F /* Organisms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organisms.swift; sourceTree = "<group>"; };
 		EAEBF2E72446FD8B00467B20 /* MarineInhabitants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarineInhabitants.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAEBF2EA2446FD8B00467B20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAEBF2EE2446FD8B00467B20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				EAEBF2EE2446FD8B00467B20 /* ViewController.swift */,
 				EAAA5AD8244715240036809C /* GameTableStackView.swift */,
 				EAAA5AD6244713E70036809C /* GameCellLabel.swift */,
+				EAE0E241244723ED007B836F /* Organisms.swift */,
 				EAEBF2F02446FD8B00467B20 /* Main.storyboard */,
 				EAEBF2F32446FD9200467B20 /* Assets.xcassets */,
 				EAEBF2F52446FD9200467B20 /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 				EAAA5AD7244713E70036809C /* GameCellLabel.swift in Sources */,
 				EAEBF2EF2446FD8B00467B20 /* ViewController.swift in Sources */,
 				EAAA5AD9244715250036809C /* GameTableStackView.swift in Sources */,
+				EAE0E242244723ED007B836F /* Organisms.swift in Sources */,
 				EAEBF2EB2446FD8B00467B20 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
