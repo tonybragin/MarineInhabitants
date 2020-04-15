@@ -9,10 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    private let gameTableHeight = 15
+    private let gameTableWidth = 10
+    
+    @IBOutlet weak var gameTableVerticalStack: GameTableStackView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        gameTableVerticalStack.initGameTable(width: gameTableWidth, height: gameTableHeight)
     }
 
 

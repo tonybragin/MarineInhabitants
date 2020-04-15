@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EAAA5AD7244713E70036809C /* GameCellLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA5AD6244713E70036809C /* GameCellLabel.swift */; };
+		EAAA5AD9244715250036809C /* GameTableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA5AD8244715240036809C /* GameTableStackView.swift */; };
 		EAEBF2EB2446FD8B00467B20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEBF2EA2446FD8B00467B20 /* AppDelegate.swift */; };
 		EAEBF2EF2446FD8B00467B20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEBF2EE2446FD8B00467B20 /* ViewController.swift */; };
 		EAEBF2F22446FD8B00467B20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAEBF2F02446FD8B00467B20 /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EAAA5AD6244713E70036809C /* GameCellLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCellLabel.swift; sourceTree = "<group>"; };
+		EAAA5AD8244715240036809C /* GameTableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableStackView.swift; sourceTree = "<group>"; };
 		EAEBF2E72446FD8B00467B20 /* MarineInhabitants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarineInhabitants.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAEBF2EA2446FD8B00467B20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAEBF2EE2446FD8B00467B20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 			children = (
 				EAEBF2EA2446FD8B00467B20 /* AppDelegate.swift */,
 				EAEBF2EE2446FD8B00467B20 /* ViewController.swift */,
+				EAAA5AD8244715240036809C /* GameTableStackView.swift */,
+				EAAA5AD6244713E70036809C /* GameCellLabel.swift */,
 				EAEBF2F02446FD8B00467B20 /* Main.storyboard */,
 				EAEBF2F32446FD9200467B20 /* Assets.xcassets */,
 				EAEBF2F52446FD9200467B20 /* LaunchScreen.storyboard */,
@@ -135,7 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAAA5AD7244713E70036809C /* GameCellLabel.swift in Sources */,
 				EAEBF2EF2446FD8B00467B20 /* ViewController.swift in Sources */,
+				EAAA5AD9244715250036809C /* GameTableStackView.swift in Sources */,
 				EAEBF2EB2446FD8B00467B20 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
