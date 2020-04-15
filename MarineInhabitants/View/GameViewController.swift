@@ -8,26 +8,29 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    
-    private let gameTableHeight = 15
-    private let gameTableWidth = 10
+class GameViewController: UIViewController {
     
     @IBOutlet weak var gameTableVerticalStack: GameTableStackView!
+    private var viewModel: GameViewModelProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTapGestureRecognizer()
+        viewModel = GameViewModel(gameTable: gameTableVerticalStack)
+        viewModel.viewDidLoad()
+    }
+    
+    private func configureTapGestureRecognizer() {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self,
                                                           action: #selector(gameTableVerticalStackTouched))
         gameTableVerticalStack.addGestureRecognizer(tapGestureRecognizer)
-        gameTableVerticalStack.initGameTable(width: gameTableWidth, height: gameTableHeight)
     }
 
     @IBAction func restartButtonTouched(_ sender: UIButton) {
-        gameTableVerticalStack.initGameTable(width: gameTableWidth, height: gameTableHeight)
+        viewModel.restartTouched()
     }
     @objc func gameTableVerticalStackTouched() {
-        gameTableVerticalStack.performMove()
+        viewModel.moveTouched()
     }
 }
 

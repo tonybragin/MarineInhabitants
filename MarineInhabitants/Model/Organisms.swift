@@ -8,50 +8,9 @@
 
 import Foundation
 
-enum Direction: Int, CaseIterable {
-    case upLeft
-    case up
-    case upRight
-    case left
-    case right
-    case downLeft
-    case down
-    case downRight
-    
-    var xOffset: Int {
-        switch self {
-        case .upLeft: return self.rawValue - 1
-        case .up: return self.rawValue
-        case .upRight: return self.rawValue + 1
-        case .left: return self.rawValue - 1
-        case .right: return self.rawValue + 1
-        case .downLeft: return self.rawValue - 1
-        case .down: return self.rawValue
-        case .downRight: return self.rawValue + 1
-        }
-    }
-    
-    var yOffset: Int {
-        switch self {
-        case .upLeft: return self.rawValue - 1
-        case .up: return self.rawValue - 1
-        case .upRight: return self.rawValue - 1
-        case .left: return self.rawValue
-        case .right: return self.rawValue
-        case .downLeft: return self.rawValue + 1
-        case .down: return self.rawValue + 1
-        case .downRight: return self.rawValue + 1
-        }
-    }
-}
-
 protocol Organism {
     var name: String { get }
     func move(from cell: GameCell, in environment: [GameCell?])
-}
-
-protocol GameCell: class {
-    var organism: Organism? { get set }
 }
 
 class Penguin: Organism {
