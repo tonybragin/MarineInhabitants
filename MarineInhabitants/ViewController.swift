@@ -17,9 +17,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self,
+                                                          action: #selector(gameTableVerticalStackTouched))
+        gameTableVerticalStack.addGestureRecognizer(tapGestureRecognizer)
         gameTableVerticalStack.initGameTable(width: gameTableWidth, height: gameTableHeight)
     }
 
-
+    @objc func gameTableVerticalStackTouched() {
+        
+    }
 }
 
