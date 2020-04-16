@@ -10,8 +10,15 @@ import UIKit
 
 class GameViewController: UIViewController {
     
-    @IBOutlet weak var gameTableVerticalStack: GameTableStackView!
+    // MARK: - Properties
+    
     private var viewModel: GameViewModelProtocol!
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var gameTableVerticalStack: GameTableStackView!
+    
+    // MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,15 +27,20 @@ class GameViewController: UIViewController {
         viewModel.viewDidLoad()
     }
     
+    // MARK: - Configuration
+    
     private func configureTapGestureRecognizer() {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self,
                                                           action: #selector(gameTableVerticalStackTouched))
         gameTableVerticalStack.addGestureRecognizer(tapGestureRecognizer)
     }
 
+    // MARK: - IBActions
+    
     @IBAction func restartButtonTouched(_ sender: UIButton) {
         viewModel.restartTouched()
     }
+    
     @objc func gameTableVerticalStackTouched() {
         viewModel.moveTouched()
     }

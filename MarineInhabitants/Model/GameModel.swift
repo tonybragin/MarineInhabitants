@@ -21,17 +21,28 @@ protocol GameModelProtocol {
 
 class GameModel: GameModelProtocol {
     
+    // MARK: - Properties
+    
     weak var delegate: GameModelDelegate?
     private var table: [[GameCell]] = []
-    
     private var width = 0
     private var height = 0
+    
+    // MARK: - Generation
     
     func initGame(width: Int, height: Int) {
         self.width = width
         self.height = height
         
-        table = []
+        table = getTable()
+        placeOrganisms(numberOfCells: width * height)
+        
+        delegate?.update(table: table)
+    }
+    
+    private func getTable() -> [[GameCell]] {
+        let newTable: [[GameCell]] = []
+        
         for _ in 0..<height {
             var row: [GameCell] = []
             for _ in 0..<width {
@@ -40,10 +51,36 @@ class GameModel: GameModelProtocol {
             table.append(row)
         }
         
-        placeOrganism(numberOfCells: width * height)
-        
-        delegate?.update(table: table)
+        return newTable
     }
+    
+    private func placeOrganisms(numberOfCells: Int) {
+        let numberOfPenguins = Int(Double(numberOfCells) * 0.5)
+        let numberOfKillerWhale = Int(Double(numberOfCells) * 0.05)
+
+        for _ in 1...numberOfPenguins {
+            placeOrganism(organism: .penguin)
+        }
+
+        for _ in 1...numberOfKillerWhale {
+            placeOrganism(organism: .killerWhale)
+        }
+    }
+    
+    private func placeOrganism(organism: OrganismFactory.Organisms) {
+        while true {
+            let x = Int.random(in: 0..<width)
+            let y = Int.random(in: 0..<height)
+            let cell = table[y][x]
+            if cell.organism == nil {
+                cell.organism = OrganismFactory.get(organism: organism)
+                return
+            }
+        }
+    }
+    
+    // MARK: - Moving
+    
     func move() {
         for (y, row) in table.enumerated() {
             for (x, cell) in row.enumerated() {
@@ -53,51 +90,8 @@ class GameModel: GameModelProtocol {
                 }
             }
         }
-        
-        table.forEach { (row) in
-            row.forEach { (cell) in
-                cell.organism?.moveEnds()
-            }
-        }
-        
+        moveEnds()
         delegate?.update(table: table)
-    }
-    
-    private func placeOrganism(numberOfCells: Int) {
-        let numberOfPenguins = Int(Double(numberOfCells) * 0.5)
-        let numberOfKillerWhale = Int(Double(numberOfCells) * 0.05)
-
-        for _ in 1...numberOfPenguins {
-            placePenguin()
-        }
-
-        for _ in 1...numberOfKillerWhale {
-            placeKillerWhale()
-        }
-    }
-    
-    private func placePenguin() {
-        while true {
-            let x = Int.random(in: 0..<width)
-            let y = Int.random(in: 0..<height)
-            let cell = table[y][x]
-            if cell.organism == nil {
-                cell.organism = Penguin()
-                return
-            }
-        }
-    }
-
-    private func placeKillerWhale() {
-        while true {
-            let x = Int.random(in: 0..<width)
-            let y = Int.random(in: 0..<height)
-            let cell = table[y][x]
-            if cell.organism == nil {
-                cell.organism = KillerWhale()
-                return
-            }
-        }
     }
     
     private func getEnvironment(x: Int, y: Int) -> [GameCell?] {
@@ -109,9 +103,16 @@ class GameModel: GameModelProtocol {
             } else {
                 environment.append(nil)
             }
-
         }
         return environment
+    }
+    
+    private func moveEnds() {
+        table.forEach { (row) in
+            row.forEach { (cell) in
+                cell.organism?.moveEnds()
+            }
+        }
     }
 }
 

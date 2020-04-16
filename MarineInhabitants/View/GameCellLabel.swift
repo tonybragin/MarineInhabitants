@@ -10,6 +10,8 @@ import UIKit
 
 class GameCellLabel: UILabel, GameCell {
     
+    // MARK: - Properties
+    
     var organism: Organism? {
         didSet {
             DispatchQueue.main.async { [weak self] in
@@ -17,6 +19,8 @@ class GameCellLabel: UILabel, GameCell {
             }
         }
     }
+    
+    // MARK: - Initialization
     
     init() {
         super.init(frame: .zero)

@@ -17,11 +17,17 @@ protocol GameViewModelProtocol {
 
 class GameViewModel: GameViewModelProtocol, GameModelDelegate {
     
-    private unowned var gameTable: GameTable
-    private var model: GameModelProtocol
+    // MARK: - Constants
     
     private let gameTableHeight = 15
     private let gameTableWidth = 10
+    
+    // MARK: - Properties
+    
+    private unowned var gameTable: GameTable
+    private var model: GameModelProtocol
+    
+    // MARK: - Initialization
     
     required init(gameTable: GameTable) {
         self.gameTable = gameTable
@@ -29,13 +35,17 @@ class GameViewModel: GameViewModelProtocol, GameModelDelegate {
         model.delegate = self
     }
     
+    // MARK: - Public
+    
     func viewDidLoad() {
         gameTable.initGameTable(width: gameTableWidth, height: gameTableHeight)
         model.initGame(width: gameTableWidth, height: gameTableHeight)
     }
+    
     func moveTouched() {
         model.move()
     }
+    
     func restartTouched() {
         model.initGame(width: gameTableWidth, height: gameTableHeight)
     }

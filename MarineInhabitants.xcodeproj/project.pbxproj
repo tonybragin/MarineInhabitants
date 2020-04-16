@@ -10,6 +10,8 @@
 		EA53538F24475A0A00E113AE /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA53538E24475A0A00E113AE /* GameModel.swift */; };
 		EA5353952447611A00E113AE /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5353942447611A00E113AE /* Direction.swift */; };
 		EA5353972447613500E113AE /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5353962447613400E113AE /* GameCell.swift */; };
+		EAA21C9D2448BE0800DFF10B /* Penguin.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA21C9C2448BE0800DFF10B /* Penguin.swift */; };
+		EAA21C9F2448BE2100DFF10B /* KillerWhale.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA21C9E2448BE2100DFF10B /* KillerWhale.swift */; };
 		EAAA5AD7244713E70036809C /* GameCellLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA5AD6244713E70036809C /* GameCellLabel.swift */; };
 		EAAA5AD9244715250036809C /* GameTableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA5AD8244715240036809C /* GameTableStackView.swift */; };
 		EAE0E242244723ED007B836F /* Organisms.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0E241244723ED007B836F /* Organisms.swift */; };
@@ -25,6 +27,8 @@
 		EA53538E24475A0A00E113AE /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		EA5353942447611A00E113AE /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
 		EA5353962447613400E113AE /* GameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCell.swift; sourceTree = "<group>"; };
+		EAA21C9C2448BE0800DFF10B /* Penguin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Penguin.swift; sourceTree = "<group>"; };
+		EAA21C9E2448BE2100DFF10B /* KillerWhale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KillerWhale.swift; sourceTree = "<group>"; };
 		EAAA5AD6244713E70036809C /* GameCellLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCellLabel.swift; sourceTree = "<group>"; };
 		EAAA5AD8244715240036809C /* GameTableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableStackView.swift; sourceTree = "<group>"; };
 		EAE0E241244723ED007B836F /* Organisms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organisms.swift; sourceTree = "<group>"; };
@@ -63,9 +67,9 @@
 			isa = PBXGroup;
 			children = (
 				EA53538E24475A0A00E113AE /* GameModel.swift */,
-				EAE0E241244723ED007B836F /* Organisms.swift */,
 				EA5353942447611A00E113AE /* Direction.swift */,
 				EA5353962447613400E113AE /* GameCell.swift */,
+				EAA21CA02448BF2C00DFF10B /* Organism */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -76,6 +80,16 @@
 				EAE0E24324474F0A007B836F /* GameViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EAA21CA02448BF2C00DFF10B /* Organism */ = {
+			isa = PBXGroup;
+			children = (
+				EAE0E241244723ED007B836F /* Organisms.swift */,
+				EAA21C9C2448BE0800DFF10B /* Penguin.swift */,
+				EAA21C9E2448BE2100DFF10B /* KillerWhale.swift */,
+			);
+			path = Organism;
 			sourceTree = "<group>";
 		};
 		EAEBF2DE2446FD8B00467B20 = {
@@ -181,11 +195,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAAA5AD7244713E70036809C /* GameCellLabel.swift in Sources */,
+				EAA21C9F2448BE2100DFF10B /* KillerWhale.swift in Sources */,
 				EAEBF2EF2446FD8B00467B20 /* GameViewController.swift in Sources */,
 				EA5353972447613500E113AE /* GameCell.swift in Sources */,
 				EAAA5AD9244715250036809C /* GameTableStackView.swift in Sources */,
 				EA5353952447611A00E113AE /* Direction.swift in Sources */,
 				EAE0E242244723ED007B836F /* Organisms.swift in Sources */,
+				EAA21C9D2448BE0800DFF10B /* Penguin.swift in Sources */,
 				EAE0E24424474F0A007B836F /* GameViewModel.swift in Sources */,
 				EA53538F24475A0A00E113AE /* GameModel.swift in Sources */,
 				EAEBF2EB2446FD8B00467B20 /* AppDelegate.swift in Sources */,
