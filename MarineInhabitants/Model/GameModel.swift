@@ -47,8 +47,16 @@ class GameModel: GameModelProtocol {
     func move() {
         for (y, row) in table.enumerated() {
             for (x, cell) in row.enumerated() {
-                let environment = getEnvironment(x: x, y: y)
-                cell.organism?.move(from: cell, in: environment)
+                if let organism = cell.organism, !organism.isMoved {
+                    let environment = getEnvironment(x: x, y: y)
+                    organism.move(from: cell, in: environment)
+                }
+            }
+        }
+        
+        table.forEach { (row) in
+            row.forEach { (cell) in
+                cell.organism?.moveEnds()
             }
         }
         
@@ -96,7 +104,12 @@ class GameModel: GameModelProtocol {
         var environment: [GameCell?] = []
         for direction in Direction.allCases {
             let point = direction.offset(x: x, y: y)
-            environment.append(table[point.y][point.x])
+            if 0..<width ~= point.x, 0..<height ~= point.y {
+                environment.append(table[point.y][point.x])
+            } else {
+                environment.append(nil)
+            }
+
         }
         return environment
     }
