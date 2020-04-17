@@ -8,37 +8,23 @@
 
 import Foundation
 
-class KillerWhale: Organism {
-    
-    // MARK: - Constants
+class KillerWhale: SuperOrganism {
 
-    var name: String {
+    override var name: String {
         return "KW"
     }
     
-    // MARK: - Properties
-
-    private var survivedMoves = 0
+    override var movesToMultiply: Int {
+        return 8
+    }
+    
     private var hungryMoves = 0
-    private(set) var isMoved = false
     
-    // MARK: - Public
-
-    func move(from cell: GameCell, in environment: [GameCell?]) {
+    override func increaseSurvivedMoves() {
         survivedMoves = (survivedMoves + 1) % 9
-        if let newCell = trySwim(from: cell, in: environment) {
-            tryMultiply(on: newCell, in: environment)
-        }
-        isMoved = true
     }
     
-    func moveEnds() {
-        isMoved = false
-    }
-    
-    // MARK: - Utility
-    
-    private func trySwim(from cell: GameCell, in environment: [GameCell?]) -> GameCell? {
+    override func trySwim(from cell: GameCell, in environment: [GameCell?]) {
         let penguinCells = environment.filter { (cell) -> Bool in
             if let _ = cell?.organism as? Penguin {
                 return true
@@ -50,34 +36,13 @@ class KillerWhale: Organism {
             cell.organism = nil
             penguinCell!.organism = self
             hungryMoves = 0
-            return penguinCell
+            return
         }
         hungryMoves += 1
         if hungryMoves == 3 {
             cell.organism = nil
-            return nil
+            return
         }
-        var choosedCell: GameCell! = nil
-        while choosedCell == nil {
-            let direction = Direction.init(rawValue: Int.random(in: 0..<8))!
-            choosedCell = environment[direction.rawValue]
-        }
-        if choosedCell.organism == nil {
-            cell.organism = nil
-            choosedCell.organism = self
-            return choosedCell
-        }
-        return cell
-    }
-    private func tryMultiply(on cell: GameCell, in environment: [GameCell?]) {
-        if survivedMoves == 8 {
-            let freeCells = environment.filter { (cell) -> Bool in
-                return cell != nil && cell!.organism == nil
-            }
-            if !freeCells.isEmpty {
-                let index = Int.random(in: 0..<freeCells.count)
-                freeCells[index]!.organism = KillerWhale()
-            }
-        }
+        super.trySwim(from: cell, in: environment)
     }
 }

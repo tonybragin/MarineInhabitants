@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA4B09A02449622800F85E41 /* OrganismFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4B099F2449622800F85E41 /* OrganismFactory.swift */; };
 		EA53538F24475A0A00E113AE /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA53538E24475A0A00E113AE /* GameModel.swift */; };
 		EA5353952447611A00E113AE /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5353942447611A00E113AE /* Direction.swift */; };
 		EA5353972447613500E113AE /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5353962447613400E113AE /* GameCell.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EA4B099F2449622800F85E41 /* OrganismFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganismFactory.swift; sourceTree = "<group>"; };
 		EA53538E24475A0A00E113AE /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		EA5353942447611A00E113AE /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
 		EA5353962447613400E113AE /* GameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCell.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		EAA21CA02448BF2C00DFF10B /* Organism */ = {
 			isa = PBXGroup;
 			children = (
+				EA4B099F2449622800F85E41 /* OrganismFactory.swift */,
 				EAE0E241244723ED007B836F /* Organisms.swift */,
 				EAA21C9C2448BE0800DFF10B /* Penguin.swift */,
 				EAA21C9E2448BE2100DFF10B /* KillerWhale.swift */,
@@ -194,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA4B09A02449622800F85E41 /* OrganismFactory.swift in Sources */,
 				EAAA5AD7244713E70036809C /* GameCellLabel.swift in Sources */,
 				EAA21C9F2448BE2100DFF10B /* KillerWhale.swift in Sources */,
 				EAEBF2EF2446FD8B00467B20 /* GameViewController.swift in Sources */,
