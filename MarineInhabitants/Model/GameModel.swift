@@ -41,14 +41,14 @@ class GameModel: GameModelProtocol {
     }
     
     private func getTable() -> [[GameCell]] {
-        let newTable: [[GameCell]] = []
+        var newTable: [[GameCell]] = []
         
         for _ in 0..<height {
             var row: [GameCell] = []
             for _ in 0..<width {
                 row.append(ModelGameCell())
             }
-            table.append(row)
+            newTable.append(row)
         }
         
         return newTable
